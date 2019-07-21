@@ -8,7 +8,7 @@ public class Program {
 //    змінні по ігровому полю  і грі
     public static final int Lines = 3, Column = 3;
     public static String[][] pole = new String[Lines][Column]; // створення масиву
-    public static int statusGry;
+    public static int gameStatus;
     public static final int GRA_TRYVAE = 0, NICHYYA = 1, PEREMOHA_X = 3, PEREMOHA_O = 4; // зміні для стану гри
 
     public static Scanner sc = new Scanner(System.in);
@@ -21,16 +21,16 @@ public class Program {
             ChidGravcia();
             AnalisPeremohy();
             VyvidPolia();
-            if (statusGry == PEREMOHA_X) {
+            if (gameStatus == PEREMOHA_X) {
                 System.out.println(" 'X' Переміг");
-            } else if (statusGry == PEREMOHA_O) {
+            } else if (gameStatus == PEREMOHA_O) {
                 System.out.println(" 'O' Переміг");
-            } else if (statusGry == NICHYYA) {
+            } else if (gameStatus == NICHYYA) {
                 System.out.println("Нічия");
             }
             aktyvnyjGravec = (aktyvnyjGravec == Cross ? Zero : Cross);
         }
-        while (statusGry == GRA_TRYVAE);
+        while (gameStatus == GRA_TRYVAE);
     }
 
 // метод для початку гри
@@ -65,13 +65,13 @@ public class Program {
 
         String winner = Winner();
         if (winner.equals(Cross)) {
-            statusGry = PEREMOHA_X;
+            gameStatus = PEREMOHA_X;
         }else if (winner.equals(Zero)) {
-            statusGry = PEREMOHA_O;
+            gameStatus = PEREMOHA_O;
         } else if (AreAllCellsFilled()) {
-            statusGry = NICHYYA;
+            gameStatus = NICHYYA;
         } else {
-            statusGry = GRA_TRYVAE;
+            gameStatus = GRA_TRYVAE;
         }
     }
 //    Перевірка на заповненість кліток поля.
