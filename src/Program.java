@@ -47,7 +47,7 @@ public class Program {
     public static void ChidGravcia() {
         boolean vvedennyaHodu = false; //25/20
         do {
-            System.out.println("Гравець '"+aktyvnyjGravec+"', ведіть рядок ( 1 - 3 ) і ствчик ( 1 - 3 ) через пробіл");
+            System.out.println("Гравець '"+aktyvnyjGravec+"', ведіть рядок ( 1 - 3 ) і стовпчик ( 1 - 3 ) через пробіл");
             int r = sc.nextInt() - 1;
             int s = sc.nextInt() - 1;
             if (r >= 0 && r < Lines &&  s >= 0 && s < Column && pole[r][s] == EmptyCell) { // 28.03
